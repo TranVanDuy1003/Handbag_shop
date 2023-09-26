@@ -3,7 +3,10 @@ import 'package:e_commerce_app/models/Product.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import 'widgets/cart_with_button.dart';
 import 'widgets/color_size.dart';
+import 'widgets/counter_and_fav.dart';
+import 'widgets/description.dart';
 import 'widgets/info_image.dart';
 
 // ignore: must_be_immutable
@@ -17,24 +20,27 @@ class DetailsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: product.color,
       appBar: AppBarDetails(context),
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: Stack(
-          children: [
-            WhiteBox(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              child: Column(
-                children: [
-                  InfoWithImage(product: product),
-                  ColorAndSize(
-                    product: product,
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Container(
+          height: size.height,
+          width: size.width,
+          child: Stack(
+            children: [
+              WhiteBox(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Column(
+                  children: [
+                    InfoWithImage(product: product),
+                    ColorAndSize(product: product),
+                    Description(product: product),
+                    CounterAndFav(),
+                    CartWithButton(size: size, product: product)
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -44,6 +50,7 @@ class DetailsPage extends StatelessWidget {
     return AppBar(
       backgroundColor: product.color,
       leading: IconButton(
+        splashRadius: 25,
         onPressed: () => Navigator.pop(context),
         icon: SvgPicture.asset(
           'assets/icons/back.svg',
@@ -52,6 +59,7 @@ class DetailsPage extends StatelessWidget {
       ),
       actions: [
         IconButton(
+          splashRadius: 25,
           onPressed: () {},
           icon: SvgPicture.asset(
             'assets/icons/search.svg',
@@ -59,6 +67,7 @@ class DetailsPage extends StatelessWidget {
           ),
         ),
         IconButton(
+          splashRadius: 25,
           onPressed: () {},
           icon: SvgPicture.asset(
             'assets/icons/cart.svg',

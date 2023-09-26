@@ -6,8 +6,8 @@ import '../../../Colors.dart';
 AppBar buildAppBar() {
   return AppBar(
     leading: IconButton(
+      splashRadius: 25,
       onPressed: () {},
-      splashRadius: 30,
       icon: SvgPicture.asset(
         'assets/icons/back.svg',
         color: Colors.black,
@@ -15,16 +15,16 @@ AppBar buildAppBar() {
     ),
     actions: [
       IconButton(
+        splashRadius: 25,
         onPressed: () {},
-        splashRadius: 30,
         icon: SvgPicture.asset(
           'assets/icons/search.svg',
           color: kTextColor,
         ),
       ),
       IconButton(
+        splashRadius: 25,
         onPressed: () {},
-        splashRadius: 30,
         icon: SvgPicture.asset(
           'assets/icons/cart.svg',
           color: kTextColor,

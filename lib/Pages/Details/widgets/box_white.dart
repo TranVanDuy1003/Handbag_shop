@@ -11,7 +11,7 @@ class WhiteBox extends StatelessWidget {
       bottom: 0,
       child: Container(
         width: size.width,
-        height: size.height * 0.6,
+        height: size.height * 0.7,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(

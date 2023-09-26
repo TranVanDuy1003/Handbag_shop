@@ -57,6 +57,7 @@ class InfoWithImage extends StatelessWidget {
               product.image,
               width: 200,
               height: 200,
+              fit: BoxFit.fill,
             ),
           ],
         ),
