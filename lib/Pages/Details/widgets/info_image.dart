@@ -53,11 +53,14 @@ class InfoWithImage extends StatelessWidget {
                 ),
               ],
             ),
-            Image.asset(
-              product.image,
-              width: 200,
-              height: 200,
-              fit: BoxFit.fill,
+            Hero(
+              tag: product.id,
+              child: Image.asset(
+                product.image,
+                width: 200,
+                height: 200,
+                fit: BoxFit.fill,
+              ),
             ),
           ],
         ),

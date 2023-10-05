@@ -70,7 +70,10 @@ class Card extends StatelessWidget {
                 ),
               ],
             ),
-            child: Image.asset(product.image),
+            child: Hero(
+              tag: product.id,
+              child: Image.asset(product.image),
+            ),
           ),
         ),
         SizedBox(height: 10),
