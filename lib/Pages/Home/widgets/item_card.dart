@@ -20,7 +20,7 @@ class ItemCard extends StatelessWidget {
           crossAxisCount: 2,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
-          childAspectRatio: 0.75,
+          childAspectRatio: 0.70,
         ),
         itemBuilder: (context, index) => Card(
           onTap: () {
@@ -57,7 +57,7 @@ class Card extends StatelessWidget {
           onTap: onTap,
           child: Container(
             width: 180,
-            height: 200,
+            height: 180,
             padding: EdgeInsets.all(15),
             decoration: BoxDecoration(
               color: product.color,
@@ -76,7 +76,7 @@ class Card extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 10),
+        SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -97,7 +97,7 @@ class Card extends StatelessWidget {
               ),
             )
           ],
-        )
+        ),
       ],
     );
   }
